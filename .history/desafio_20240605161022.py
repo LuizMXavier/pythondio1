@@ -64,35 +64,7 @@ def criar_usuario(usuarios):
         return
     nome = input("Informe o nome completo: ")
     data_nascimento = input("Informe a data de nascimento (dd-mm-aaaa): ")
-    endereco = input("informe o endereço (logradouro, nro - bairro - cidade/sigla estado): ")
-    
-    usuarios.append({"nome":nome, "data_nascimento":data_nascimento, "cpf":cpf, "endereco":endereco})
-
-    print("=== Usuário criado com sucesso! ===")
-
-def filtrar_usuario(cpf, usuarios):
-    usuarios_filtrados = [usuario for usuario in usuarios if usuario["cpf"] == cpf]
-    return usuarios_filtrados[0] if usuarios_filtrados else None
-
-def criar_conta(agencia, numero_conta, usuarios):
-    cpf = input("Informe o CPF do usuário: ")
-    usuario = filtrar_usuario(cpf, usuarios)
-
-    if usuario:
-        print("\n=== Conta criada com sucesso! ===")
-        return {"agencia": agencia, "numero_conta":numero_conta, "usuario":usuario}
-    print("\n Usuário não encontrado, fluxo de criação de conta encerrada! ")
-
-def listar_contas(contas):
-    for conta in contas:
-        linha = f"""\
-            Agência:\t{conta['agencia']}
-            C/C:\t\t{conta['numero_conta']}
-            Titular:\n{conta['usuario']['nome']}
-        """
-        print("=" * 100)
-        print(textwrap.dedent(linha))
-        
+    endereco = 
 def main():
     saldo = 0
     limite = 500
@@ -130,20 +102,8 @@ def main():
         elif opcao == "nu":
             criar_usuario(usuarios)
 
-        elif opcao == "nc":
-            numero_conta = len(contas) + 1
-            conta = criar_conta(AGENCIA, numero_conta, usuarios)
-
-            if conta:
-                contas.append(conta)
-        elif opcao == "lc":
-            listar_contas(contas)
-
         elif opcao == "q":
             break
 
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
-
-
-main()

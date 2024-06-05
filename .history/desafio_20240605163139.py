@@ -82,17 +82,7 @@ def criar_conta(agencia, numero_conta, usuarios):
         print("\n=== Conta criada com sucesso! ===")
         return {"agencia": agencia, "numero_conta":numero_conta, "usuario":usuario}
     print("\n Usuário não encontrado, fluxo de criação de conta encerrada! ")
-
-def listar_contas(contas):
-    for conta in contas:
-        linha = f"""\
-            Agência:\t{conta['agencia']}
-            C/C:\t\t{conta['numero_conta']}
-            Titular:\n{conta['usuario']['nome']}
-        """
-        print("=" * 100)
-        print(textwrap.dedent(linha))
-        
+def listar_contas
 def main():
     saldo = 0
     limite = 500
@@ -144,6 +134,3 @@ def main():
 
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
-
-
-main()

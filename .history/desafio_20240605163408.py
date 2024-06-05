@@ -90,9 +90,7 @@ def listar_contas(contas):
             C/C:\t\t{conta['numero_conta']}
             Titular:\n{conta['usuario']['nome']}
         """
-        print("=" * 100)
-        print(textwrap.dedent(linha))
-        
+        print("=" * 1000)
 def main():
     saldo = 0
     limite = 500
@@ -144,6 +142,3 @@ def main():
 
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
-
-
-main()

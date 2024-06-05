@@ -85,13 +85,6 @@ def criar_conta(agencia, numero_conta, usuarios):
 
 def listar_contas(contas):
     for conta in contas:
-        linha = f"""\
-            Agência:\t{conta['agencia']}
-            C/C:\t\t{conta['numero_conta']}
-            Titular:\n{conta['usuario']['nome']}
-        """
-        print("=" * 100)
-        print(textwrap.dedent(linha))
         
 def main():
     saldo = 0
@@ -144,6 +137,3 @@ def main():
 
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
-
-
-main()

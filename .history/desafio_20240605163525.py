@@ -92,8 +92,9 @@ def listar_contas(contas):
         """
         print("=" * 100)
         print(textwrap.dedent(linha))
-        
+
 def main():
+    
     saldo = 0
     limite = 500
     extrato = ""
@@ -144,6 +145,3 @@ def main():
 
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
-
-
-main()
